@@ -250,7 +250,7 @@ export default {
     async saveOrUpdate() {
       let res = await saveOrUpdate(this.formData);
       if (res.flag) this.$message.success("数据录入成功");
-      else this.$message.error(data.data.message);
+      else this.$message.error(res.data.message);
       this.findPage();
     },
     handleAdd(ruleForm) {
