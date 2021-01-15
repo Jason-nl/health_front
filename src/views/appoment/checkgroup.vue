@@ -286,7 +286,7 @@ export default {
         this.checkitemIds = res.data.checkItemIds
         this.$message.success('数据回显成功')
       } else {
-        this.$message.error(res.data.message)
+        this.$message.error(res.message)
       }
     },
     handleReset() {
@@ -342,7 +342,7 @@ export default {
         this.dataList = res.data.rows;
         this.pagination.total = res.data.total;
       } else {
-        this.$message.error(res.data.message);
+        this.$message.error(res.message);
       }
     },
     async findAllCheckItem() {
@@ -352,7 +352,7 @@ export default {
     async saveOrUpdateGroup(formData) {
       let res = await saveOrUpdate(formData);
       if (res.flag) this.$message.success("数据录入成功");
-      else this.$message.error(res.data.message);
+      else this.$message.error(res.message);
       this.findPageByGroup();
     }
   }
